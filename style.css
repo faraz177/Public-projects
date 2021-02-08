@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Share:ital,wght@0,700;1,700&display=swap');
+html {
+    box-sizing: border-box;
+    font-family: "Share", sans-serif;
+    font-style: Bold;
+    font-size: 6rem;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 15vh;
+    position: center;
+}
+
+.panel {
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.panel-inner {
+    position: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    animation: flip 5s linear forwards infinite;
+    animation-direction: normal;
+}
+
+.panel-front,
+.panel-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.panel-front {
+    background-color: yellow;
+    color: black;
+    padding: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 5px;
+    transform: rotateY(-180deg);
+}
+
+.panel-back {
+    background-color: rgb(65, 236, 208);
+    color: black;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 5px;
+}
+
+.panel-front img {
+    width: 30rem;
+    height: 30rem;
+}
+
+@keyframes flip {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
